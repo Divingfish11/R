@@ -1,0 +1,92 @@
+#问题1
+#问题3-1 浮点值numeric 整数integer 复数complex
+#问题3-2 levels()
+#问题3-3 使用函数as.numeric()
+#问题3-4 print() summary() runif() sample() attributrs()
+#问题3-5 使用函数rm()
+
+#问题2
+#练习3-1
+#查找类
+class(Inf)#查找Inf类
+class(NA)#查找NA类
+class(NaN)#查找NaN类
+class("")#查找""类
+#查找类型
+typeof(Inf)#查找Inf类型
+typeof(NA)#查找NA类型
+typeof(NaN)#查找NAN类型
+typeof("")#查找""类型
+#查找模式
+mode(Inf)#查找Inf模式
+mode(NA)#查找NA模式
+mode(NaN)#查找NaN模式
+mode("")#查找""模式
+#查找存储模式
+storage.mode(Inf)#查找Inf存储模式
+storage.mode(NA)#查找NA存储模式
+storage.mode(NaN)#查找NaN存储模式
+storage.mode("")#查找""存储模式
+#练习3-2
+x1<-sample(c("dog","cat","dolphin","hamster","goldfish"),100,replace=TRUE)#随机生成100个变量
+x1[1:5]#显示所得变量的前5个值
+table(x1)#计算每种宠物的数量
+#练习3-3
+apple<-1;strawberry<-2;plum<-3#创造关于水果的变量
+ls(pattern="a")#找出包含字母a的变量
+
+#问题3
+#问题4-1 c(0,0.25,0.5,0.75,1,1.25)
+#问题4-2 方式1：使用name=value的形式在创建向量时命名 方式2：向量创建后使用names函数为元素命名
+#问题4-3 正整数索引 负整数索引 逻辑值索引 元素名的字符串向量索引
+#问题4-4 72
+x2<-array(dim=c(3,4,6))#定义一个数组
+length(x2)#得出数组长度
+#4-5 A%*%B
+
+#问题4
+#练习1)
+seq.int(11,50,3)-c(2,3)#创造向量并相减
+#练习2)
+seq.int(1.1,4,20)*c(4,5,8,9)#创造向量并相乘
+#练习3)
+c(1,2,4,6)+c(8,0,-1,-4)#创造向量并相加
+c(1,2,4,6)-c(8,0,-1,-4)#创造向量并相减
+c(1,2,4,6)*c(8,0,-1,-4)#创造向量并相乘
+c(1,2,4,6)/c(8,0,-1,-4)#创造向量并相除
+
+#问题5
+#练习4-1
+x3<-c(1:50)*c((1:50)+1)/2#创造序列
+names(x3)<-letters[1:15]#得到常数letters的前15个英文字母
+x3[c("a","e","i","o","u")]#命名序列
+#练习4-2
+x4<-c(11:0,1:11)#创造序列
+diag(x4)#创造方阵
+
+#问题6
+#问题5-1 3
+length(list(alpha=1,list(beta=2,gamma=3,delta=4),eta=NULL))
+#问题5-2 使用函数formals()时
+#问题5-3 data.frame()
+#问题5-4 data.frame(check.names=FALSE)
+#问题5-5 merge()
+
+#问题7
+#练习5-1
+r<-sqrt(c(0:99))#创建一个从一到九十九的平方数列表
+z<-r==floor(r)#向下取整
+a<-c(0:99)[z]#筛选出平方数
+group<-cut(a,seq.int(min(0:99),max(0:99),10),include.lowest = TRUE,right = FALSE)
+split(a,group)#将所有数据切割成十组
+#练习5-2
+x<-data.frame(iris)#建立数据框将鸢尾花数据存入
+mean(iris[ ,1])
+mean(iris[ ,2])
+mean(iris[ ,3])
+mean(iris[ ,4])#求平均值
+#练习5-3
+beaver1 $ id<-1#添加列名为id，值为一的列
+beaver2 $ id<-2
+x<-rbind(beaver1,beaver2)#垂直拼接俩个数据框
+subset(x,activ>0)#选出活跃的子集
